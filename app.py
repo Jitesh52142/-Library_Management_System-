@@ -40,9 +40,6 @@ def delete(id):
 
 
 
-def non():
-    pass 
-
 # call a APP when file run 
 if __name__ == "__main__":
     app.run(debug=True)
