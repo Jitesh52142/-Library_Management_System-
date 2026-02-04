@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form method="post">
+    <input type="text" name="title" value="{{ book[1] }}" required>
+    <input type="text" name="author" value="{{ book[2] }}" required>
+    <button type="submit">Update</button>
+</form>
+
+{% endblock %}

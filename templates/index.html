@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<a href="/add">➕ Add Book</a>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for book in books %}
+    <tr>
+        <td>{{ book[0] }}</td>
+        <td>{{ book[1] }}</td>
+        <td>{{ book[2] }}</td>
+        <td>
+            <a href="/edit/{{ book[0] }}">Edit</a> |
+            <a href="/delete/{{ book[0] }}" onclick="return confirm('Delete?')">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
