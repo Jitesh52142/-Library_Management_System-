@@ -37,6 +37,12 @@ def delete(id):
     library.delete_book(id)
     return redirect(url_for("index"))
 
+
+
+
+def non():
+    pass 
+
 # call a APP when file run 
 if __name__ == "__main__":
     app.run(debug=True)
