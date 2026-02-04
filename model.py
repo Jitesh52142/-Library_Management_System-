@@ -1,6 +1,8 @@
 
-import sqlite3
+import sqlite3 # call sqllite to create a local db to save logs.
 
+
+# create a class to generate a local db structure. 
 class LibraryModel:
     def __init__(self, db_name="library.db"):
         self.db_name = db_name
@@ -22,9 +24,12 @@ class LibraryModel:
         conn.commit()
         conn.close()
 
-    # ---------- CRUD OPERATIONS here ----------
 
-    def create_book(self, title, author):
+    ## starting a curd opreation in the class for liberary management ------------
+
+
+    # start a function to create or add books details
+    def create_book(self, title, author): 
         conn = self.connect()
         cursor = conn.cursor()
         cursor.execute(
@@ -34,6 +39,7 @@ class LibraryModel:
         conn.commit()
         conn.close()
 
+    # start a function to view all avalibles.
     def get_all_books(self):
         conn = self.connect()
         cursor = conn.cursor()
@@ -42,6 +48,7 @@ class LibraryModel:
         conn.close()
         return books
 
+    #start a function to search book by id.
     def get_book_by_id(self, book_id):
         conn = self.connect()
         cursor = conn.cursor()
@@ -53,6 +60,7 @@ class LibraryModel:
         conn.close()
         return book
 
+    #a function to update details of books avalible 
     def update_book(self, book_id, title, author):
         conn = self.connect()
         cursor = conn.cursor()
@@ -63,6 +71,7 @@ class LibraryModel:
         conn.commit()
         conn.close()
 
+    # a function to delete books entire
     def delete_book(self, book_id):
         conn = self.connect()
         cursor = conn.cursor()
